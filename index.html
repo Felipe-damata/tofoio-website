@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Tofoio Hydra Links</title>
+    <title>Tufoio Hydra Links</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=DM+Mono&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
         button {
             font-family: 'DM Mono', monospace;
             font-size: 1.2rem;
-            padding: 15px 30px;
+            padding: 12px 25px;
             margin: 15px;
             border: none;
             border-radius: 8px;
@@ -40,12 +40,25 @@
             background-color: #1c1c1c;
             color: white;
             transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        button img {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.6s ease;
         }
 
         button:hover {
             background-color: #d8d8d8;
             transform: scale(1.05);
             color: #1c1c1c;
+        }
+
+        button:hover img {
+            transform: rotate(360deg);
         }
 
         #copyWarn {
@@ -65,20 +78,30 @@
 </head>
 <body>
     <header>
-        <h1>Tufoio - Free Steam Games</h1>
+        <h1>
+            Tufoio - Free Steam Games
+        </h1>
     </header>
     <main>
-        <button onclick="window.open('all_games.json', '_blank')">Abrir JSON</button>
-        <button id="copyBtn">Copiar Link</button>
+        <button onclick="window.open('all_games.json', '_blank')">
+            <img src="pasta.png" alt="JSON">
+            Abrir JSON
+        </button>
+
+        <button id="copyBtn">
+            <img src="asterisco.png" alt="Copiar">
+            Copiar Link
+        </button>
+
         <span id="copyWarn">Copiado!</span>
     </main>
     <footer>
-        <p>&copy; Games to Hydra</p>
+        <p>Games to Hydra</p>
     </footer>
 
     <script>
-        document.getElementById('copyBtn').onclick = function() {
-            navigator.clipboard.writeText('https://felipe.co/6.json').then(function() {
+        document.getElementById('copyBtn').onclick = function () {
+            navigator.clipboard.writeText('https://felipe-damata.github.io/tofoio-website/all_games.json').then(function () {
                 const warn = document.getElementById('copyWarn');
                 warn.style.display = 'inline';
                 setTimeout(() => {
